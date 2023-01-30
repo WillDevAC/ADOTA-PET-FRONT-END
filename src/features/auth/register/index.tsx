@@ -31,7 +31,7 @@ export const RegisterFeature = () => {
     password: "",
   };
 
-  const [loading, setLoading] = useState<Boolean>(false);
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const {
