@@ -1,4 +1,12 @@
-import { Container, Details, Photo, Action } from "./styles";
+import {
+  Container,
+  Details,
+  Photo,
+  Action,
+  AvatarRoot,
+  AvatarFallback,
+  AvatarImage,
+} from "./styles";
 
 import { IoIosArrowDown } from "react-icons/io";
 
@@ -7,17 +15,22 @@ import { AuthContext } from "../../../context/auth.context";
 import { Dropdown } from "../../ui/dropdown";
 
 export const UserLogged = () => {
-
   const { user } = useContext(AuthContext);
 
   return (
     <Dropdown>
       <Container>
         <Photo>
-          <img
-            src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fHByb2ZpbGV8ZW58MHx8MHx8&w=1000&q=80"
-            alt="Profile photo"
-          />
+          <AvatarRoot>
+            <AvatarImage
+              src="https://images.unsplash.com/photo-1492633423870-43d1cd2775eb?&w=128&h=128&dpr=2&q=80"
+              alt={user?.name}
+            />
+            <AvatarFallback delayMs={600}>
+              {user?.name.split(" ")[0][0]}
+              {user?.name.split(" ")[0][1]}
+            </AvatarFallback>
+          </AvatarRoot>
         </Photo>
         <Details>
           <span>Bem vindo,</span>
@@ -30,6 +43,5 @@ export const UserLogged = () => {
         </Action>
       </Container>
     </Dropdown>
-    
-  ); 
+  );
 };
