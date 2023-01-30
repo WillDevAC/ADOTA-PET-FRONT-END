@@ -18,6 +18,5 @@
   },
   "include": ["src"],
   "files": ["globals.d.ts"],
-  "typeRoots": ["node_modules/yup"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
