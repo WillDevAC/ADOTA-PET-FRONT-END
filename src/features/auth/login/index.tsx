@@ -9,7 +9,7 @@ import { Input } from "../../../theme/ui/inputs";
 
 import { toast } from "react-toastify";
 import { motion } from "framer-motion";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 
 import { yupResolver } from "@hookform/resolvers/yup";

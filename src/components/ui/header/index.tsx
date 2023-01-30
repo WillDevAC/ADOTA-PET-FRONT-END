@@ -31,7 +31,7 @@ export const Header = ({ path }: IHeader) => {
       </Links>
       <Options>
         {path === "/auth/" && !authenticated && (
-          <Button onClick={() => navigate(-1)} size="medium" type="outline">
+          <Button onClick={() => navigate('/')} size="medium" type="outline">
             Voltar para home
           </Button>
         )}
