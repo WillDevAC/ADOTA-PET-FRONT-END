@@ -35,7 +35,7 @@ export const UserLogged = () => {
         <Details>
           <span>Bem vindo,</span>
           <h3>
-            {user?.name.split(" ")[0]} {user?.name.split(" ")[1][1]}.
+            {user?.name.split(" ")[0]} {user?.name.split(" ")[1][0]}.
           </h3>
         </Details>
         <Action>

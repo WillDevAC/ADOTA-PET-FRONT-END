@@ -1,4 +1,4 @@
-import React from 'react';
+import { FilterPetsFeature } from '../features/pet/filter';
 
 import Layout from '../layout';
 
@@ -6,7 +6,8 @@ export const Home = () => {
   return (
     <Layout>
       <div className="main-content">
-        <div>contéudo</div>
+        <FilterPetsFeature />
+        <div>Contéudo</div>
       </div>
     </Layout> 
   );

@@ -49,7 +49,7 @@ export const Action = styled("div", {
 });
 
 export const AvatarRoot = styled(AvatarPrimitive.Root, {
-  display: "inline-flex",
+  display: "flex",
   alignItems: "center",
   justifyContent: "center",
   verticalAlign: "middle",

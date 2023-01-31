@@ -8,7 +8,7 @@ import { Button } from "../../../theme/ui/buttons";
 
 import { useContext } from "react";
 import { AuthContext } from "../../../context/auth.context";
-import { UserLogged } from "../../cards/userLogged";
+import { UserLogged } from "../../cards/user_logged";
 
 interface IHeader {
   path?: string;

@@ -11,12 +11,16 @@ export const Input = styled("input", {
                 outline: 'none',
                 color: 'gray',
                 borderRadius: '0.2rem',
-            }
+            },
         },
         size: {
             full: {
                 width: '100%',
                 height: '3rem',
+            },
+            checkbox: {
+                width: '1.5rem',
+                accentColor: '#fe2c55',
             }
         }
     },
