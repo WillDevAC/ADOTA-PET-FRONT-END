@@ -13,7 +13,7 @@ import {
 
 interface IPetCard {
   src?: string;
-  ong: TUser[];
+  ong: TUser;
   pet: string;
   location?: string;
 }
