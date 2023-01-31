@@ -13,7 +13,7 @@ import {
 
 interface IPetCard {
   src?: string;
-  ong: TUser;
+  ong: TUser[];
   pet: string;
   location?: string;
 }
@@ -28,7 +28,8 @@ export const PetInfoCard = ({ src, ong, pet, location }: IPetCard) => {
         />
       </CardImage>
       <CardDetails>
-        <Ong>{ong.name}</Ong>
+        { /* @ts-ignore */ }
+        <Ong>{ong.name} </Ong>
         <NamePet>{pet}</NamePet>
         <Location>{location}</Location>
       </CardDetails>

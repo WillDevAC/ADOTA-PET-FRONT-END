@@ -19,8 +19,14 @@ export const ListPetsFeature: React.FC = () => {
 
   return (
     <Grid>
-        { pets.map((pet) => <PetInfoCard ong={pet.user} pet={pet.name} location="RIO BRANCO, AC"/>) }
-      
+      {pets.map((pet, key) => (
+        <PetInfoCard
+          key={key}
+          ong={pet.user}
+          pet={pet.name}
+          location="RIO BRANCO, AC"
+        />
+      ))}
     </Grid>
   );
 };

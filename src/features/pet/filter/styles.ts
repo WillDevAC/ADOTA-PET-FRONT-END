@@ -5,6 +5,7 @@ export const Container = styled('div', {
     flexDirection: 'column',
     width: '18rem',
     gap: '1rem',
+    position: 'fixed',
 });
 
 export const CardFilter = styled('div', {

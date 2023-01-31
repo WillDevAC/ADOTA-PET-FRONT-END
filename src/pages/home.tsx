@@ -1,3 +1,4 @@
+import { Footer } from "../components/ui/footer";
 import { FilterPetsFeature } from "../features/pet/filter";
 import { ListPetsFeature } from "../features/pet/list";
 

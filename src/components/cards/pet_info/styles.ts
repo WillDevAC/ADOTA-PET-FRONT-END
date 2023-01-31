@@ -4,7 +4,8 @@ export const Card = styled("div", {
     display: 'flex',
     flexDirection: 'column',
     backgroundColor: 'white',
-    padding: '1em'
+    padding: '0.8em',
+    borderRadius: '0.3em',
 })
 
 export const CardImage = styled("div", {
