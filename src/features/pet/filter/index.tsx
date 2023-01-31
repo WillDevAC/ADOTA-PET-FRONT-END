@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { api } from "../../../services/api";
 
 import {
@@ -11,10 +11,10 @@ import {
 
 import { TSizes, TSpecies } from "../../../@types/pet.type";
 import { Input } from "../../../theme/ui/inputs";
-import { Button } from "../../../theme/ui/buttons";
+import { FilterContext } from "../../../context/filter.context";
 
 export const FilterPetsFeature = () => {
-  const [ loading, setLoading ] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [species, setSpecies] = useState<TSpecies[]>([]);
   const [sizes, setSizes] = useState<TSizes[]>([]);
   const [sexs, setSexs] = useState([
@@ -27,6 +27,14 @@ export const FilterPetsFeature = () => {
       name: "Fêmea",
     },
   ]);
+  
+  const { setFilter } = useContext(FilterContext);
+
+  const [selectedValues, setSelectedValues] = useState({
+    race: [],
+    size: [],
+    sex: "",
+  });
 
   const getCategories = async () => {
     setLoading(true);
@@ -36,9 +44,39 @@ export const FilterPetsFeature = () => {
     setLoading(false);
   };
 
+  const handleCheckboxChange = (name: string, value: number | string) => {
+    if (name === "sex") {
+      if (selectedValues[name]) {
+        setSelectedValues({ ...selectedValues, [name]: "" });
+      } else {
+        setSelectedValues({ ...selectedValues, [name]: value });
+      }
+    } else {
+      const selectedArray = selectedValues[name] as any[];
+      
+      const valueExists = selectedArray.find((obj) => obj.id === value);
+
+      if (valueExists) {
+        setSelectedValues({
+          ...selectedValues,
+          [name]: selectedArray.filter((obj) => obj.id !== value),
+        });
+      } else {
+        setSelectedValues({
+          ...selectedValues,
+          [name]: [...selectedArray, { id: value }],
+        });
+      }
+    }
+  };
+
   useEffect(() => {
     getCategories();
   }, []);
+
+  useEffect(() => {
+    setFilter(selectedValues);
+  }, [selectedValues]);
 
   return (
     <Container>
@@ -47,7 +85,13 @@ export const FilterPetsFeature = () => {
         <CardFilterBody>
           {species.map((specie, key) => (
             <GroupInput key={key}>
-              <Input type="checkbox" size="checkbox" />
+              <Input
+                type="checkbox"
+                size="checkbox"
+                value={specie.id}
+                //@ts-ignore
+                onChange={(e) => handleCheckboxChange("race", e.target.value)}
+              />
               {specie.specieName}
             </GroupInput>
           ))}
@@ -59,7 +103,12 @@ export const FilterPetsFeature = () => {
         <CardFilterBody>
           {sexs.map((sex, key) => (
             <GroupInput key={key}>
-              <Input type="checkbox" size="checkbox" />
+              <Input
+                type="checkbox"
+                size="checkbox"
+                value={sex.name}
+                onChange={(e) => handleCheckboxChange("sex", e.target.value)}
+              />
               {sex.name}
             </GroupInput>
           ))}
@@ -71,7 +120,12 @@ export const FilterPetsFeature = () => {
         <CardFilterBody>
           {sizes.map((size, key) => (
             <GroupInput key={key}>
-              <Input type="checkbox" size="checkbox" />
+              <Input
+                type="checkbox"
+                size="checkbox"
+                value={size.id}
+                onChange={(e) => handleCheckboxChange("size", e.target.value)}
+              />
               {size.sizeName}
             </GroupInput>
           ))}

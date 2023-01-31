@@ -5,6 +5,7 @@ export const Card = styled("div", {
     flexDirection: 'column',
     backgroundColor: 'white',
     padding: '0.8em',
+    maxWidth: '400px',
     borderRadius: '0.3em',
 })
 
@@ -13,7 +14,6 @@ export const CardImage = styled("div", {
     alignItems: 'center',
     justifyContent: 'center',
     width: '100%',
-    backgroundColor: 'red',
     Height: '12em',
 
     'img': {
@@ -46,10 +46,17 @@ export const NamePet = styled("h1", {
 })
 
 export const Location = styled("span", {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
     color: 'gray',
     fontSize: '0.8em'
 })
 
 export const CardAction = styled("div", {
+    display: 'flex',
+})
+
+export const PetSex = styled("div", {
     display: 'flex',
 })

@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { TUser } from "../../../@types/user.type";
 import { Button } from "../../../theme/ui/buttons";
 
@@ -9,16 +10,20 @@ import {
   NamePet,
   Location,
   CardAction,
+  PetSex,
 } from "./styles";
 
 interface IPetCard {
+  id: number | string;
   src?: string;
   ong: TUser[];
   pet: string;
   location?: string;
 }
 
-export const PetInfoCard = ({ src, ong, pet, location }: IPetCard) => {
+export const PetInfoCard = ({ src, ong, pet, location, id }: IPetCard) => {
+  const navigate = useNavigate();
+
   return (
     <Card>
       <CardImage>
@@ -28,13 +33,18 @@ export const PetInfoCard = ({ src, ong, pet, location }: IPetCard) => {
         />
       </CardImage>
       <CardDetails>
-        { /* @ts-ignore */ }
+        {/* @ts-ignore */}
         <Ong>{ong.name} </Ong>
         <NamePet>{pet}</NamePet>
-        <Location>{location}</Location>
+        <Location>
+          {location}
+          <PetSex>M</PetSex>
+        </Location>
       </CardDetails>
       <CardAction>
-        <Button size="full">Adotar</Button>
+        <Button size="full" onClick={() => navigate(`/pet/details/${id}`)}>
+          Adotar
+        </Button>
       </CardAction>
     </Card>
   );
