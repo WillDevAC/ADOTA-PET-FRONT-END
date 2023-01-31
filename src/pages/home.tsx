@@ -1,15 +1,17 @@
-import { FilterPetsFeature } from '../features/pet/filter';
+import { FilterPetsFeature } from "../features/pet/filter";
+import { ListPetsFeature } from "../features/pet/list";
 
-import Layout from '../layout';
+import Layout from "../layout";
 
 export const Home = () => {
   return (
-    <Layout>
-      <div className="main-content">
-        <FilterPetsFeature />
-        <div>Contéudo</div>
-      </div>
-    </Layout> 
+    <>
+      <Layout>
+        <div className="main-content">
+          <FilterPetsFeature />
+          <ListPetsFeature />
+        </div>
+      </Layout>
+    </>
   );
-}
-
+};

@@ -1,3 +1,5 @@
+import { TUser } from "./user.type";
+
 export interface TSpecies {
   id: number;
   specieName: string;
@@ -32,3 +34,21 @@ export interface IPetCategories {
   sex: string[];
   race: IRace[];
 }
+
+export interface PET {
+  active: boolean;
+  color: IColors[];
+  createdAt: string | null;
+  deletedAt: string | null;
+  description: string;
+  id: string;
+  lost: boolean;
+  name: string;
+  profilePicture: string;
+  race: IRace[];
+  size: TSizes[];
+  specie: TSpecies[];
+  tag: string;
+  updatedAt: string | null;
+  user: TUser[];
+};

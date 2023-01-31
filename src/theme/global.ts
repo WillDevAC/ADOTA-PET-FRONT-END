@@ -13,7 +13,7 @@ export const globalStyles = globalCss({
     MozOsxFontSmoothing: "grayscale",
   },
   main: {
-    padding: "2rem 5rem",
+    padding: "2rem 3rem",
 
     "@media screen and (max-width: 889px) ": {
       padding: "1.5rem 1.5rem",
