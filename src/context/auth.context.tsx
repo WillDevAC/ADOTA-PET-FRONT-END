@@ -76,8 +76,8 @@ export function AuthProvider({ children }: AuthProviderProps) {
     setUser(null);
     setAuthenticated(false);
     navigate("/");
-    toast.warn('Você foi desconectado.')
-  }	
+    toast.warn("Você foi desconectado.");
+  }
 
   return (
     <AuthContext.Provider value={{ authenticated, signIn, user, Logout }}>

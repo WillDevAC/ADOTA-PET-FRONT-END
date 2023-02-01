@@ -14,9 +14,9 @@ const Router: React.FC = () => {
       <AnimatePresence>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/pet/details/:id" element={<Details />} />
         <Route path="/auth/register" element={<Register />} />
         <Route path="/auth/login" element={<Login />} />
+        <Route path="/pet/details/:id" element={<Details />} />
       </Routes>
     </AnimatePresence>
   );

@@ -11,6 +11,7 @@ export const Container = styled('header', {
   position: 'sticky',
   top: 0,
   boxShadow: '0 1px 2px 0 rgb(0 0 0 / 0.05)',
+  zIndex: '2',
 
   "@media screen and (max-width: 889px) ": {
     paddingLeft: '1.5rem',
