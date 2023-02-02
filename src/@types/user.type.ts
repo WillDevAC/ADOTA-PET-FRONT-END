@@ -1,14 +1,44 @@
 export type TUser = {
-    active: boolean;
-    cpf: string;
-    createdAt: Date;
-    deletedAt: string | null;
-    email: string;
-    id: number;
-    name: string;
-    phone: string;
-    profilePicture: string | null;
-    role: string;
-    updatedAt: string;
-    verified: boolean;
-  };
+  id: number
+  email: string
+  name: string
+  cpf: string
+  phone: string
+  birthDate: any
+  job: any
+  address: Address
+  income: any
+  typeResidence: any
+  freeTime: any
+  childAtHome: any
+  petAtHome: any
+  age: any
+  sex: string
+  verified: boolean
+  active: boolean
+  profilePicture: any
+  createdAt: string
+  updatedAt: string
+  deletedAt: any
+  role: string
+  enabled: boolean
+  accountNonExpired: boolean
+  accountNonLocked: boolean
+  credentialsNonExpired: boolean
+  username: string
+  authorities: Authority[]
+};
+
+export interface Address {
+  id: number
+  title: any
+  fullAddress: string
+  description: any
+  cep: string
+  latitude: number
+  longitude: number
+}
+
+export interface Authority {
+  authority: string
+}

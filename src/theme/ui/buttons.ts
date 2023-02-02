@@ -51,6 +51,10 @@ export const Button = styled("button", {
         width: "100%",
         height: "3rem",
       },
+      card: {
+        width: '85%',
+        height: "2.2rem",
+      }
     },
   },
   defaultVariants: {
