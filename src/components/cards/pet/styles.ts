@@ -10,7 +10,9 @@ export const Card = styled("div", {
 });
 
 export const Header = styled("div", {
-    position: 'relative',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
     width: '100%',
     height: '200px',
     overflow: 'hidden',
@@ -60,6 +62,19 @@ export const Sex = styled("span", {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+    padding: '0.2rem',
+
+    variants: {
+        sex: {
+            male: {
+                backgroundColor: '#bdd7ce',
+            },
+            female: {
+                backgroundColor: '#fdd9db',
+            }
+        }
+    }
+
 });
 
 export const PetAdoption = styled("div", {

@@ -21,10 +21,11 @@ export const ListPetsFeature: React.FC = () => {
 
   return (
     <Grid>
-      {pets.map((pet) => (
+      {pets.map((pet, key) => (
         <PetCard
+          key={key}
           id={pet.id}
-          profilePicture={`https://adota-pet-production.up.railway.app/pet/image/${pet.profilePicture}`}
+          profilePicture={pet.profilePicture}
           ong={pet.user}
           pet={pet.name}
           sex={pet.sex}

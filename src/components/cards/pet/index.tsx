@@ -11,9 +11,12 @@ import {
   AddFavorite,
 } from "./styles";
 
+import { useState } from "react";
 import { Button } from "../../../theme/ui/buttons";
 import { AiOutlineStar } from "react-icons/ai";
 import { TUser } from "../../../@types/user.type";
+import { BsGenderFemale, BsGenderMale } from 'react-icons/bs'
+import { ColorRing } from "react-loader-spinner";
 
 interface IPetCard {
   id: string | number;
@@ -24,17 +27,31 @@ interface IPetCard {
 }
 
 export const PetCard = ({ id, profilePicture, ong, pet, sex }: IPetCard) => {
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
+
   return (
     <Card>
       <Header>
-        <img src={profilePicture} alt={pet} />
+        {!isImageLoaded && <ColorRing width="20" />}
+        <img
+          src={`https://adota-pet-production.up.railway.app/pet/image/${profilePicture}`}
+          alt={pet}
+          onLoad={() => setIsImageLoaded(true)}
+          style={{ display: isImageLoaded ? "block" : "none" }}
+        />
       </Header>
       <Body>
         <PetOng>{ong.name}</PetOng>
         <PetName>{pet}</PetName>
         <PetMoreDetails>
           <Address>RIO BRANCO, ACRE</Address>
-          <Sex>{sex}</Sex>
+          <Sex>
+            {sex === 'Macho' ? (
+              <BsGenderMale size={20} color="#17479E" title={sex} />
+            ) : (
+              <BsGenderFemale size={20} color="#F6A5AB" title={sex} />
+            )}
+          </Sex>
         </PetMoreDetails>
         <PetAdoption>
           <Button size="card">Adotar</Button>
