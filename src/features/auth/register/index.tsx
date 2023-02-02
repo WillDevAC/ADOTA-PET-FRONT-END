@@ -46,7 +46,7 @@ export const RegisterFeature = () => {
 
     setLoading(true);
 
-    const response = await api.post("/config/user/", {
+    const response = await api.post("/api/auth/signup/", {
       name,
       email,
       password,
@@ -62,6 +62,7 @@ export const RegisterFeature = () => {
       reset(defaultValues);
       toast.error("Erro ao cadastrar usuário!");
     }
+
   };
 
   return (
