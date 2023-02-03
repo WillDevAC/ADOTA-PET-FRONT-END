@@ -31,5 +31,7 @@ export const CardFilterBody = styled('div', {
 
 export const GroupInput = styled('div', {
     display: 'flex',
-    gap: '0.3rem',
+    alignItems: 'center',
+    color: 'gray',
+    gap: '0.5rem',
 })

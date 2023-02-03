@@ -18,6 +18,7 @@ import { TUser } from "../../../@types/user.type";
 import { BsGenderFemale, BsGenderMale } from 'react-icons/bs'
 import { ColorRing } from "react-loader-spinner";
 
+
 interface IPetCard {
   id: string | number;
   profilePicture: string;

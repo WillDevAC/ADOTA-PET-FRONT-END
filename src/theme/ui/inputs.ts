@@ -19,7 +19,8 @@ export const Input = styled("input", {
                 height: '3rem',
             },
             checkbox: {
-                width: '1.5rem',
+                width: '17px',
+                height: '17px',
                 accentColor: '#fe2c55',
             }
         }
